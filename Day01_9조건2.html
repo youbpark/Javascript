@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숲속을 걸어요</title>
+    <style>
+        .hide{
+            display: none;
+        }
+        .show{
+            display: inline-block;
+        } 
+    </style>
+</head>
+<body>
+    <select id="type">
+        <option>빵</option>
+        <option>커피</option>
+        <option>샐러드</option>
+    </select><br>
+    <select id="coffee" class="hide">
+        <option>1잔</option>
+        <option>2잔</option>
+        <option>3잔</option>
+    </select>
+    <script>
+        document.getElementById('type').addEventListener('input', function(event){
+            // event : 해당 이벤트 발생 시 실행되는 함수
+            var choose = event.target.value; // 이벤트를 발생시킨 대상(target)의 입력값(value)
+            if(choose ==="커피"){
+                // 선택값이 '커피'면 show클래스
+                document.getElementById('coffee').classList.remove('hide');
+                document.getElementById('coffee').classList.add('show');
+            }else{
+                document.getElementById('coffee').classList.remove('show');
+                document.getElementById('coffee').classList.add('hide');
+            }
+        })
+    </script>
+</body>
+</html>

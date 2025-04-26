@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>꽃향기가 그윽한 길</title>
+</head>
+<body>
+    <h1 id="number"></h1>
+    <h1 id="string"></h1>
+    <button id = "add">더하기</button>
+    <button id = "sub">빼기</button>
+    <button id = "mul">곱하기</button>
+    <button id = "div">나누기</button>
+    <button id = "rem">나머지</button>
+    <script>
+        var num = 1; 
+        var integer = 0 // 소수점이 없으면 정수
+        var float = 1.0 // 소수점이 있으면 실수
+        document.getElementById('number').innerHTML = num;
+        document.getElementById('add').addEventListener('click',function(){
+            num = num + 1;
+            document.getElementById('number').innerHTML = num;
+        })
+        // 빼기, 곱하기, 나누기 구현
+        document.getElementById('sub').addEventListener('click',function(){
+            num = num -1;
+            document.getElementById('number').innerHTML = num;
+        })
+        document.getElementById('mul').addEventListener('click',function(){
+            num = num * 2;
+            document.getElementById('number').innerHTML = num;
+        })
+        document.getElementById('div').addEventListener('click',function(){
+            num = num / 2;
+            document.getElementById('number').innerHTML = num;
+        })
+        document.getElementById('rem').addEventListener('click',function(){
+            num = num % 2;
+            document.getElementById('number').innerHTML = num;
+        })
+        var str = "";
+        str = "반갑습니다아" 
+        // 문자열은 이어붙이기(+)만 가능
+        str = str + "!"
+        document.getElementById('string').innerHTML = str;
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숲속을 걸어요</title>
+</head>
+<body>
+    <h1 id="my_id">안녕하세요</h1>
+    <h1><span id="my_name">말하는 감자</span>입니다</h1>
+    <script>
+        // 자바 스크립트 영역
+        // 자바스크립트 : HTML을 실시간 변화를 주기 위해 생겨난 프로그래밍 언어
+        
+        // document : html을 말함
+        // HTML 문서 속 id가 my_id인 요소를 찾고 그 요소의 HTML속 내용을 변경
+        document.getElementById("my_id").innerHTML = " 반갑습니다";
+        document.getElementById("my_id").style.color = "blueviolet";
+        document.getElementById("my_name").innerHTML = "감자밭";
+        document.getElementById("my_name").style.fontSize = "30pt";
+    </script>
+</body>
+</html>

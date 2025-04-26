@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숲 속을 걸어요</title>
+</head>
+<body>
+    <h1 id="myNumber"></h1>
+    <h1 id="myString"></h1>
+    <script>
+        // 자바스크립트
+        // 변수 : 변하는 값을 저장하는 공간( 저장 공간 ) 
+        var num = 0;
+        document.getElementById('myNumber').innerHTML = num;
+
+        document.getElementById('myNumber').addEventListener('click', function(){
+            num = num + 1;
+            document.getElementById('myNumber').innerHTML = num;
+        })    
+        // 변수에 어떤 값을 담는지에 따라 공간의 형태가 다름
+        // 형태 -> 자료형(Type)
+        var string = "HI~ 에이치아이~ HELLO~ 에이치이엘엘오~";
+        // 숫자는 사칙연산이 가능 문자열은 더하기(문자열붙이기)만 가능
+        document.getElementById('myString').innerHTML = string;
+        document.getElementById('myString').addEventListener('click',function(){
+            string = string + "ㅎㅣ";
+            document.getElementById('myString').innerHTML = string;
+        })
+    </script>
+</body>
+</html>

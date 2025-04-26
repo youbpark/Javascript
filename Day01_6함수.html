@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다람쥐가 넘나드는 길</title>
+</head>
+<body>
+    <h1 id="num"></h1>
+    <button onclick="addfunc()">더하기</button>
+    <hr/>
+    <h1 id="introduce"></h1>
+    <h1 id="sum1"></h1>
+    <h1 id="sum2"></h1> 
+    <h1 id="sum3"></h1>
+    <script>
+        // 변수(variable) : 값을 저장하는 공간
+        // 함수(fucntion) : 코드를 저장하는 공간
+
+        var variable = 0;
+        function func(){
+
+        }
+        document.getElementById('num').innerHTML = variable;
+        function addfucn(){
+            variable += 1;
+            document.getElementById('num').innerHTML = variable;
+        }
+
+        // 함수사용
+        addfucn();
+
+        // 함수 옆에 있는 () : 코드를 저장, 상황에 따라 바뀔 수 있는 부분
+        function meet(dummyVar){
+            document.getElementById('introduce').innerHTML = "안녕하세요 "+ dummyVar +"입니다"
+        }
+        meet('홍길동')
+
+        function mul(num1, num2){
+            // 사용하는 곳에서 num1, num2 값을 지정하면 곱한 결과 출력
+           var result = num1 * num2; 
+           return result;
+        }
+        var result1 = mul(2,3);
+        var result2 = mul(3,4);
+        var result3 = mul(10,-3);
+
+        document.getElementById('sum1').innerHTML = result1;
+        document.getElementById('sum2').innerHTML = result2;
+        document.getElementById('sum3').innerHTML = result3;
+    </script>
+</body>
+</html>

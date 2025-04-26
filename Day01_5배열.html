@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>햇님도 쉬었다 가는 길</title>
+</head>
+<body>
+    <h1 class="number"></h1>
+    <h1 class="number"></h1>
+    <h1 class="number"></h1>
+    <script>
+        // 배열 : 변수들을 뭉쳐놓은 것
+        var num1 = 1;
+        var num2 = 2;
+        var num3 = 3;
+        
+        // 숫자 세트 [배열]
+        // 배열 사용 이유 : 하나의 키워드로 모여있어 쉽게 찾을 수 있음 
+        var arr = [1,3,5]
+
+        document.getElementsByClassName('number')[0].innerHTML = arr[0];
+        document.getElementsByClassName('number')[1].innerHTML = arr[1];
+        document.getElementsByClassName('number')[2].innerHTML = arr[2];
+    </script>
+</body>
+</html>

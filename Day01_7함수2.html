@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정다운 얼굴로 </title>
+    <style>
+        .hide{
+            transform: translateX(-100%); /*왼쪽으로 100% 밀어줌*/
+            height: 0;
+
+        }
+        .highlight{ 
+            text-decoration: underline;
+            font-size: 32pt;
+            color: orangered;
+        }
+        #myId{
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="myId" onmouseover="highlightOn()" onmouseleave="highlightOff()">열고 닫기</h1>
+    <button id="toggleBtn" onclick="hideshow()">토글 버튼</button>
+    <script>
+        function hideshow(){
+            // 저장할 코드를 기입
+            // myId에 hide라는 클래스 이름을 붙였다 뗏다
+            document.getElementById('myId').classList.toggle('hide');
+        }
+        function highlightOn(){
+            document.getElementById('myId').classList.add('highlight');
+        }
+        function highlightOff(){
+            document.getElementById('myId').classList.remove('highlight');
+        }
+    </script>
+</body>
+</html>

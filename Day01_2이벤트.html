@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산새들이 속삭이는 길</title>
+    <style>
+        .box{
+            background-color: powderblue;
+            padding: 0.5em 1.5em;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="my_box">
+        <button id="close_btn">닫기</button>
+    </div>
+    <button id="open_btn">열기</button>
+    <script>
+        // 자바스크립트로 클릭 이벤트 추가
+        document.getElementById('open_btn').addEventListener('click',function(){
+            // open_btn 클릭시 동작할 코드
+            // my_box의 display: none을 display: block으로 바꾸어 보이게 함
+            document.getElementById('my_box').style.display = "block";
+        });
+        // close_btn을 클릭하면 my_box를 가림
+        document.getElementById('close_btn').addEventListener('click',function(){
+            document.getElementById('my_box').style.display = "none";
+        })
+    </script>
+</body>
+</html>
