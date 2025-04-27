@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랄랄라 두 잎</title>
+</head>
+<body>
+    <h1 id="name"></h1>
+    <h1 id="age"></h1>
+    <h1 id="hobby"></h1>
+    <h1 id="greeting"></h1>
+    <script>
+        // 변수의 자료형 : 정수, 실수, 문자열, 배열, 오브젝트
+        // 정수 : 소수점 없는 숫자
+        // 실수 : 소수점 있는 숫자
+        // 문자열 : 글자(""로 감싸줌)
+        // 배열 : 변수들 묶음([]로 감싸 ,로 구분)
+        // 오브젝트 : 주제별 변수와 함수를 묶음
+        var integerType = 0;
+        var floatType = 0.0;
+        var stringType = "글자";
+        var arrType = [1,2,"글"];
+
+        // 사람에 대한 오브젝트 생성
+        var person = {
+            nameObj : "맹구",
+            ageObj : 5,
+            hobbyObj : "돌 수집",
+            meet : function(){
+                return "안녕하세요"
+            }
+        }
+        document.getElementById('name').innerHTML = person.nameObj;
+        document.getElementById('age').innerHTML = person.ageObj;
+        document.getElementById('hobby').innerHTML = person.hobbyObj;
+        document.getElementById('greeting').innerHTML = person.meet();
+
+    </script>
+</body>
+</html>

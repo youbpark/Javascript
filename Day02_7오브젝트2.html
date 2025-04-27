@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랄랄라 세 잎</title>
+</head>
+<body>
+    <pre id="box"></pre>
+    
+    <script>
+        // 객체, object
+        // 객체명.속성명;
+        var product1 = {
+            productName : '연필',
+            productPrice : 1000
+        };
+        var product2 = {
+            productName : '샤프',
+            productPrice : 2000
+        };
+        var product3 = {
+            productName : '볼펜',
+            productPrice : 1500
+        };
+        let products = [
+            {
+                productName : '연필',
+                productPrice : 1000
+            },
+            {
+                productName : '샤프',
+                productPrice : 2000
+            },
+            {
+                productName : '볼펜',
+                productPrice : 1500
+            }
+        ]
+        // map 반복문 (배열에 사용) : 하나씩 까면서 반복
+        products.map(function(item){
+            document.getElementById('box').innerHTML += item.productName + ":" + item.productPrice + "원\n";
+        });
+    </script>
+</body>
+</html>

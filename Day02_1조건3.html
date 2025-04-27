@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>깊고 작은 산골짜기 사이로</title>
+</head>
+<body>
+    <h1 id = "h1Text"></h1>
+    <h1 id = "hello"></h1>
+    <p id="sum"></p>
+    <input id = "textInput"  type = "text" placeholder="비밀번호를 입력하세요">
+    <button id="submitBtn" onclick="test()">버튼</button>
+    <h1 id="result"></h1>
+    <script>
+        // 조건문 if(){}
+        // pw : 1234
+
+        function test(){
+            // input에 적힌 값이 "1234" 라면 성공
+            var value = document.getElementById('textInput').value;
+
+            // if 조건문 : ()안에 조건문이 맞으면 {}에 있는 코드를 실행
+            // if(value === "1234"){ 
+            //     // 입력한 값이 1234라면
+            //     document.getElementById('result').innerHTML = "정답";
+            // }
+
+            // 삼항연산자 : 조건을 주고 맞으면 왼쪽, 틀리면 오른쪽
+            // ?를 기준으로 왼쪽에는 비교식
+            // ?를 기준으로 오른쪽에는 : 을 적는다
+            // : 을 기준으로 비교식이 맞을땐 왼쪽 틀리면 오른쪽
+            value === "1234" ? document.getElementById('result').innerHTML = "정답":document.getElementById('result').innerHTML = 'fail';
+        }
+
+
+        
+        // 여기에 자바스크립트 입력
+        // 자바스크립트 : HTML문서를 실시간으로 조작하기 위한 프로그래밍 언어
+        document.getElementById('h1Text').innerHTML = "안녕하세요";
+        document.getElementById('h1Text').style.color = "blueviolet";
+
+        // 이벤트 추가
+        document.getElementById('h1Text').addEventListener('click',function(){
+            document.getElementById('h1Text').style.color ="yellowgreen";
+        })
+
+        //프로그래밍 언어 : 변수, 함수, 제어문(조건문, 반복문)
+        // 변수 : 값을 저장하기 위한 저장공간
+        var name; // 공간을 처음 생성할 때 앞에 var이라고 붙여줌
+        name = 'value'; // = : 오른쪽에 있는 값을 왼쪽 공간에 담는다 (같다X)
+
+        // 함수 : 코드를 저장하는 공간
+        function func(){ // {}안에 코드를 저장
+
+        }
+        function addfunc(){
+            name += 1;
+        }
+        // 함수 사용
+        addfunc();
+
+        // 함수의 ()안에 매개변수를 만들 수 있음
+        // 매개변수 : 함수를 사용할 대 그때그때 바꿔주고 싶은 부분이 있으면 매개변수 사용
+        function introduce(name){
+            document.getElementById('hello').innerHTML = "안녕하세요 " + name + "입니다";
+        }
+
+        introduce('맹구')
+
+        function add(num1, num2){
+            // function안에서 return이라는 키워드를 적어주면
+            // 함수가 끝남과 동시에 return 옆에 적힘 값을 사용한 곳에 전달
+            return num1 + num2;
+        }
+        var val = add(3,4);
+        document.getElementById('sum').innerHTML = val;
+    </script>
+</body>
+</html>

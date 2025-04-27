@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랄랄라 네 잎</title>
+</head>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        // 자바스크립트로 HTML태그 생성 방법1
+        let pTagAdd = document.createElement('p'); // p태그 추가
+        pTagAdd.innerHTML = "반갑습니다"; // <p>반갑습니다</p>
+        // box의 자식요소로 pTagAdd를 넣는다
+        document.getElementById('box').appendChild(pTagAdd);
+
+        // 자바스크립트로 HTML태그 생성 방법2
+        let htmlCode = '<p class = "hello">안녕하세요</p><hr/>';
+        document.getElementById('box').innerHTML = htmlCode; // innerHTML : 내용 바꿈
+        document.getElementById('box').insertAdjacentHTML('beforeend', htmlCode);// 뒤에 추가
+        document.getElementById('box').innerHTML += htmlCode; // 뒤에 이어붙이기
+
+        // 객체
+        let object = { name : "맹구", age : 5};
+        let objectResult = `<h1>${object.name}의 나이는 ${object.age}살 입니다 </h1>`;
+        document.getElementById('box').innerHTML += objectResult;
+    </script>
+</body>
+</html>

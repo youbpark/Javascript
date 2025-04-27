@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>랄랄라 한 잎</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .noDisplay{
+            display: none;
+        }
+        .showDisplay{
+            display: inline-block;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+        }
+        ul li{
+            padding: 4px 12px;
+            border: 1px solid lightgray;
+        }
+        .tabSelected{
+            border-top: 2px solid orange;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- 탭 : 탭을 누르면 해당 항목의 내용이 보임 -->
+    <div>
+        <ul>
+            <li class="tabClass tabSelected">탭1</li>
+            <li class="tabClass">탭2</li>
+            <li class="tabClass">탭3</li>
+        </ul>
+        <p class="content">탭1의 내용</p>
+        <p class="content noDisplay">탭2의 내용</p>
+        <p class="content noDisplay">탭3의 내용</p>
+    </div>
+    <script>
+        var tabBtn = document.getElementsByClassName('tabClass');
+        var contents = document.getElementsByClassName('content');
+
+        // var는 반복문에서 버그발생
+        // let 반복문 버그 해결
+        // const 한번 정마면 못바꾸는 변수 = 상수;
+        for(let i = 0; i < tabBtn.length; i++){
+            tabBtn[i].addEventListener('click',function(){
+                // 모든 탭에 대해 클릭이벤트 추가
+                // tabBtn[0].classList.remove('tabSelected');
+                // tabBtn[1].classList.remove('tabSelected');
+                // tabBtn[2].classList.remove('tabSelected');
+                // contents[0].classList.remove('noDisplay');
+                // contents[1].classList.remove('noDisplay');
+                // contents[2].classList.remove('noDisplay');
+
+                for(let j =0; j < tabBtn.length; j++){
+                    tabBtn[j].classList.remove('tabSelected');
+                    contents[j].classList.add('noDisplay');
+                }
+                // 클릭이 되면 우선 모두 숨기고, 선택 안됨 처리
+                // 클릭된 탭만 tabSelected를 붙이고, noDisplay를 제거
+                tabBtn[i].classList.add('tabSelected');
+                contents[i].classList.remove('noDisplay');
+            });
+        }
+    </script>
+  </body>
+</html>

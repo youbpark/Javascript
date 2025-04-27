@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예쁜 꽃들 사이에 살짝 숨겨진</title>
+</head>
+<body>
+    <pre id="text"></pre> <!-- pre 내부에선 \n이 사용 가능 -->
+    <script>
+        // 반복문
+        // 반복문 기본형 : for( 반복횟수 ){}
+        for(var i = 1; i <= 10; i++){
+            // (임시변수; 조건; 증가량)
+            document.getElementById('text').innerHTML += i + '\n' ; 
+        }
+        // document.getElementById('text').innerHTML = '1\n'
+        // document.getElementById('text').innerHTML += '2\n'
+        // document.getElementById('text').innerHTML += '3\n'
+        // document.getElementById('text').innerHTML += '4\n'
+        // document.getElementById('text').innerHTML += '5\n'
+        // document.getElementById('text').innerHTML += '6\n'
+        // document.getElementById('text').innerHTML += '7\n'
+    </script>
+</body>
+</html>
