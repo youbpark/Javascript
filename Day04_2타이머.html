@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머</title>
+</head>
+<body>
+    <div id="hideDiv">3초 후 사라짐</div>
+    <p class="timer"></p>
+    <script>
+        // 3초 타이머를 생성 hide를 display : none
+        // setTimer(함수,ms)
+        setTimeout(function(){
+            document.getElementById('hideDiv').style.display = "none";
+        },3000);
+
+        // 특정 주기마다 반복 수행
+        let second = 0;
+        setInterval(function(){
+            second++;
+            document.querySelector('.timer').innerHTML = second;
+        },1000)
+    </script>
+</body>
+</html>

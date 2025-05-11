@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            width: 100%;
+            min-height: 100vh;
+            background-image: url(kakao.png);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixedDiv">
+        <div class="relativeDiv">
+            <form onsubmit="보내기(event)">
+                <input type="text" id="prompt">
+                <button type="submit" id="submitBtn">▶</button>
+            </form>
+        </div>
+    </div>
+    <div class="content">
+        <pre id="pre"></pre>
+    </div>
+    
+    <script>
+        let 이미실행중 = false
+        // chatgpt에 fetch를 통해 질문을 보내고
+        // 응답을 기다리게 한 다음
+        // 다 받으면 화면에 뿌리기
+
+        
+        // 외부사이트에 요청하고 응답을 받아와야하기 때문에 async function으로 제작
+            // 응답 대기때문 await
+        async function 보내기(event){
+            event.preventDefault();
+            // 버튼을 누르면 input에 있는  value를 가져온다
+            let 입력값 = document.getElementById('prompt').value;
+            if(입력값){
+                document.getElementById('prompt').value = "";  
+
+                if(이미실행중 === false){
+                    이미실행중 = true;
+                    document.getElementById('submitBtn').innerHTML = '■';
+                    document.getElementById('pre').innerHTML += "\n\n사용자 : " + 입력값;
+                    // GPT에 질문 보내기
+                    let 응답결과 = await fetch('https://api.openai.com/v1/chat/completions',{
+                        method : 'POST',
+                        headers:{
+                            "Content-Type" : "application/json",
+                            "Authorization" : "Bearer "
+                        },body:JSON.stringify(
+                            {
+                                model : "gpt-4o-mini",
+                                messages : [   
+                                    {
+                                        "role" : "developer",
+                                        "content" : "You are a helpful assistant."
+                                    },
+                                    {
+                                        "role" : "user",
+                                        "content" : 입력값
+                                    }
+                                ]
+                            }
+                        )
+                    });
+
+                    let 제이슨 = await 응답결과.json()
+                    console.log(제이슨)
+                    
+                    let text = 제이슨?.choices?.[0]?.message?.content ?? "내용이 없습니다"
+
+                    // document.getElementById('pre').innerHTML = text
+
+                    document.getElementById('pre').innerHTML += "\n\nChatGPT : " + text;
+
+                    // 다 끝나고 
+                    document.getElementById('submitBtn').innerHTML = '▶';
+                    이미실행중 = false;
+
+                }
+                
+            }
+            
+            
+            // https://platform.openai.com/docs/api-reference/chat/create
+            // https://api.openai.com/v1/chat/completion [post요청]
+           
+        }
+    </script>
+</body>
+</html>
